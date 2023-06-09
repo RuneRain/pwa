@@ -1,0 +1,159 @@
+.chat{
+  @include set-box(100%)
+}
+
+.chat_screen {
+  background:PeachPuff;
+  height:calc(100% - 140px);
+  overflow:auto;
+}
+
+
+.chat_header {
+  padding:0;
+
+  .preview:hover{
+    background: none;
+  }
+
+  .chat_header_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .chat_title {
+    font-size:1.2rem
+    }
+    .chat_num i {
+      color:$gray2;
+      margin-right:5px;
+    }
+  }
+  
+  .header_menu {
+    display:flex;
+    align-items: center;
+
+    span {
+      margin-left:3px;
+
+      &:nth-child(3) {
+        
+      }
+    }
+  }
+}
+
+.buble_container {
+  .bubble_wrap{
+    display:flex;
+    flex-direction: column;
+
+    .preview_title{
+      width:auto;
+    }
+
+    .bubble_content{
+      display:flex;
+
+
+      .bubbble {          
+        width:80%;
+
+        @include set-box(auto,auto,6px);
+        position: relative;
+        padding:10px;
+        box-shadow:2px 2px 10px  $opcityBlack;
+        background:white;
+
+        &::before{
+          @include set-box(0, 0);
+          content: "";
+          position:absolute;
+          top:10px;
+          left:-10px;
+          border-bottom:10px solid transparent;
+          border-right:10px solid white;
+        }
+      }
+      .bubble_time{
+        display:flex;
+        align-items: self-end; 
+        font-size:0.7rem;
+        padding-left:6px; 
+        white-space:nowrap;    
+      }
+    }
+    
+  }
+}
+
+.bubbble_preview.my{
+  flex-direction: row-reverse;
+
+  .preview_pic{
+    display: none;
+  }
+
+  .bubble_wrap{
+    flex-direction: row-reverse;
+    .preview_title{
+      display: none;
+    } 
+    .bubble_content{
+      display:flex;
+      flex-direction: row-reverse;
+      
+      .bubbble{
+      background:$bg-color!important;
+
+      &::before{
+        left:auto!important;
+        right:-10px!important;
+        border-top:10px solid $bg-color;
+        border-right:10px solid transparent!important;
+      }
+
+      }
+
+      .bubble_time {
+        padding-right:6px;
+      }
+    }
+  }
+}
+
+.chat_form {
+  background:#fff;
+  height:140px;
+  padding:10px;
+
+  .chat_form_msg{
+    @include set-box(75px, 100%);
+    resize:none;
+    margin-bottom:8px;
+    border:none;
+    outline:none;
+  }
+
+  .chat_form_util{
+    display:flex;
+    justify-content:space-between;
+    .chat_form_util_plugin{
+      i {
+        margin-right:10px;
+        color:$gray2;
+        line-height:35px;
+        &:hover{color:black}
+      }      
+    }
+
+    .chat_form_util_submit{
+      .chat_form_btn{
+        @include set-box(35px, 65px, 6px);
+        border:none;
+        color:$gray1;
+      }
+    }
+  }
+}

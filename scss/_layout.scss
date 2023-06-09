@@ -1,0 +1,49 @@
+nav {
+  @include setBox(100%,70px);
+  background-color:$sub2;
+  position:fixed;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:60px;
+  
+  .nav_list {
+    .nav_btn {
+      padding-bottom:30px;
+      color:$sub1;
+      cursor:pointer;
+
+      &:hover {
+        color:$sub;
+      }
+    }
+  }
+}
+
+.header {
+  display:flex;
+  justify-content:space-between;
+  padding:50px 20px 20px;
+  position:sticky; top:0;
+  background:$bg-color;
+  z-index:10;
+
+ .header_title {
+  font-size:1.2rem;
+  color:$sub;
+  font-weight:700;
+  span {font-size:0.8rem;}
+}
+ .header_menu {
+  
+  span {
+    @include setBox(36px, 36px, 18px);
+    display:inline-block;
+    text-align:center;
+    line-height:36px;
+    color:$sub;
+    cursor:pointer;
+  }
+ }
+}

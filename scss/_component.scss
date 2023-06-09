@@ -1,0 +1,47 @@
+.preview {
+  display:flex;
+  padding:16px;
+  position:relative;
+
+  .preview_col {
+
+    &:nth-child(1) {
+      margin-right:16px;
+    }
+    .preview_pic {
+      @include setBox(50px, 50px, 8px);
+      background:$main-color;
+    }
+    .preview_title {
+      width:50vw;
+      margin-bottom:6px;
+      font-size:0.85rem;
+      color:$sub1;
+
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .preview_msg {
+      width:50vw;
+      font-size:0.83rem;
+      color:$sub1;
+
+      //두줄만 보이게 하기
+      display:-webkit-box;
+      word-wrap:break-word;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      text-overflow:hidden;
+    }
+    //시간관련
+    .preview_time {
+      position:absolute;
+      right:16px;
+      top:16px;
+      font-size:0.73rem;
+      color:$sub1;
+    }
+  }
+}

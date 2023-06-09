@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--apple 자체의 속성 때문에, apple에서도 사용하게 할 때는 별도로 적어줘야 함-->
+  <title>솜솜챗</title>
+  <link rel="shortcut icon" href="img/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if("serviceWorker" in navigator){
+      //서비스워커가 있을때(서비스워커 지원여부 물어봄)
+      navigator.serviceWorker.register('service-worker.js')
+      // 등록해주는 메소드. 비동기함수(promise 포함)
+        .then((success)=>{
+          console.log("serviceWorker 연결 성공")
+        })
+        .catch((error)=>{
+          console.log("serviceWorker 연결 실패")
+        })
+    }
+  </script>
+</head>
+<body>
+  <div class="login_container">
+    <div class="login">
+      <h1 class="login_logo">솜솜챗</h1>
+    
+      <form action="chatlist.html" class="login_form">
+        <input type="email" class="login_form_id" placeholder="계정 (이메일 또는 전화번호)">
+        <input type="password" class="login_form_pw" placeholder="비밀번호">
+        <input type="submit" class="login_form_btn" value="로그인">
+        <input type="checkbox"  class="login_form_check" id="check">
+        <label for="check">자동로그인</label>
+      </form>
+
+      <p class="login_account">
+        <a href="#">솜솜 계정 찾기</a>
+        <span>|</span>
+        <a href="#">비밀번호 재설정</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

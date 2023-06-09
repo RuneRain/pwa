@@ -1,0 +1,8 @@
+@import '_mixvaryables'; //변수, 믹스인을 제일 처음에.
+@import './reset';
+@import './layout';
+@import './component';
+
+@import './index';
+@import './chatList';
+@import './chat';
